@@ -10,7 +10,10 @@ import { ConfigModule } from '@nestjs/config';
     ConfigModule.forRoot({
       envFilePath: ['.env.development.local'],
     }),
-    MongooseModule.forRoot(process.env.MONGO_URI, { useFindAndModify: false }),
+    MongooseModule.forRoot(
+      'mongodb+srv://shopapi:shopapi@shopapi.m2xr5.mongodb.net/ShopApi?retryWrites=true&w=majority',
+      { useFindAndModify: false },
+    ),
     ArticleModule,
   ],
   controllers: [AppController],
